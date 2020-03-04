@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    data1:
+      username: system
+      password: 233666
+      jdbc-url: jdbc:oracle:thin:@DESKTOP-QA8UILO/citygis
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+
+    data2:
+      username: citygis
+      password: citygis1613
+      jdbc-url: jdbc:oracle:thin:@172.16.25.49/citygis
+      driver-class-name: oracle.jdbc.driver.OracleDriver
