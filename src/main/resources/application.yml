@@ -59,3 +59,21 @@ redis:
   port: 6379
   password: 123456
   timeout: 1000
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm} [%thread] %-5level %logger{50} - %msg%n"
+    max-history: 30
+    max-size: 10MB
+  level:
+    com:
+      charles:
+        demo:
+          # 在DAO层 设置日志等级为debug 可以轻易查出程序问题所在
+          data1:
+            mapper: debug
+          data2:
+            mapper: debug
+    root: INFO
+  file:
+    path: demolog

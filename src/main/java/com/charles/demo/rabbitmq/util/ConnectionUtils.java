@@ -6,18 +6,25 @@ import com.rabbitmq.client.ConnectionFactory;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author Charles
+ * @date 2020年3月5日19:12:23
+ */
 public class ConnectionUtils {
 
     /**
      * 获取MQ的链接
+     *
      * @return
      * @throws TimeoutException
      * @throws IOException
      */
 
     public static Connection getConnection() throws IOException, TimeoutException {
+
+
         //定义一个链接工厂
-        ConnectionFactory factory=new ConnectionFactory();
+        ConnectionFactory factory = new ConnectionFactory();
 
         //设置服务地址
         factory.setHost("127.0.0.1");
@@ -35,5 +42,7 @@ public class ConnectionUtils {
         factory.setPassword("forwsl");
 
         return factory.newConnection();
+
+
     }
 }

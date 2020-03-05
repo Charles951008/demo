@@ -28,7 +28,7 @@ public class RedisController {
     private RedisUtil redisUtil;
 
     @RequestMapping("set")
-    public boolean redisset(String key, String value){
+    public boolean redisSet(String key, String value){
         UserEntity userEntity =new UserEntity();
         userEntity.setId(Long.valueOf(1));
         userEntity.setGuid(String.valueOf(1));
@@ -41,7 +41,7 @@ public class RedisController {
     }
 
     @RequestMapping("get")
-    public Object redisget(String key){
+    public Object redisGet(String key){
         return redisUtil.get(key);
     }
 

@@ -6,7 +6,18 @@
     <select id="getCommunityInf" resultType="java.util.HashMap">
         select *
         from (select "NAVICAT_TABLE".*, ROWNUM "NAVICAT_ROWNUM"
-        from(select t.* from GIS_COMMUNITY t
+        from(select
+        t.小区经理名称,
+        t.街道名称,
+        t.MINX,
+        t.MINY,
+        t.小区地址,
+        t.所属区县,
+        t.小区名称,
+        t.小区类型,
+        t.OBJECTID,
+        t.总门牌数
+         from GIS_COMMUNITY t
         where 1=1
         <if test="areaName!=null and areaName!=''">
             and t.区县=#{areaName}

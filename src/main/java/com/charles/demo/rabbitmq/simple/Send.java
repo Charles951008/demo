@@ -7,26 +7,37 @@ import com.rabbitmq.client.Connection;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author Charles
+ * @date 2020年3月5日20:29:07
+ */
 public class Send {
-    private static final String QUEUE_NAME="test_simple_queue";
-    public static void main(String[] args) throws IOException, TimeoutException {
+    private static final String QUEUE_NAME = "test_simple_queue";
 
-        //获取一个链接
-        Connection connection= ConnectionUtils.getConnection();
+    public static void main(String[] args) {
+        try {
+            //获取一个链接
+            Connection connection = ConnectionUtils.getConnection();
 
-        //从连接中获取一个通道
-        Channel channel= connection.createChannel();
+            //从连接中获取一个通道
+            Channel channel = connection.createChannel();
 
-        //创建队列声明
-        channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+            //创建队列声明
+            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
-        String msg="hello simple !!!";
+            String msg = "hello simple !!!";
 
-        channel.basicPublish("",QUEUE_NAME,null,msg.getBytes());
+            channel.basicPublish("", QUEUE_NAME, null, msg.getBytes());
 
-        System.out.println("--send msg:"+msg);
+            System.out.println("--send msg:" + msg);
 
-        channel.close();
-        connection.close();
+            channel.close();
+            connection.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
+
     }
 }
