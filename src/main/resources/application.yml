@@ -10,8 +10,52 @@ spring:
       password: 233666
       jdbc-url: jdbc:oracle:thin:@DESKTOP-QA8UILO/citygis
       driver-class-name: oracle.jdbc.driver.OracleDriver
+      type: com.alibaba.druid.pool.DruidDataSource
+
+        # 连接池的配置信息
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
     data2:
       username: citygis
       password: citygis1613
       jdbc-url: jdbc:oracle:thin:@172.16.25.49/citygis
       driver-class-name: oracle.jdbc.driver.OracleDriver
+      type: com.alibaba.druid.pool.DruidDataSource
+
+        # 连接池的配置信息
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+redis:
+  jedis:
+    pool:
+      max-active: 100
+      max-wait: 10000
+      max-idle: 10
+  host: 127.0.0.1
+  port: 6379
+  password: 123456
+  timeout: 1000
