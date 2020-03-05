@@ -3,12 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.charles.demo.data1.mapper.CommunityInformationMapper">
-    <select id="getUserList" resultType="java.util.HashMap">
-   　　 select t.* from GIS_COMMUNITY t
-   where 1=1
-   <if test="areaname!=null and areaname!=''">
-       and t.区县=#{areaname}
-   </if>
+    <select id="getCommunityInf" resultType="java.util.HashMap">
+        select *
+        from (select "NAVICAT_TABLE".*, ROWNUM "NAVICAT_ROWNUM"
+        from(select t.* from GIS_COMMUNITY t
+        where 1=1
+        <if test="areaName!=null and areaName!=''">
+            and t.区县=#{areaName}
+        </if>)"NAVICAT_TABLE"
+        WHERE ROWNUM &lt;= #{endItem})
+        WHERE "NAVICAT_ROWNUM" &gt;= #{startItem}
+    </select>
 
-  　</select>
+    <select id="getCommunityNum" resultType="Integer">
+        select count(*) from GIS_COMMUNITY
+        where 1=1
+        <if test="areaName!=null and areaName!=''">
+            and 区县=#{areaName}
+        </if>
+    </select>
 </mapper>

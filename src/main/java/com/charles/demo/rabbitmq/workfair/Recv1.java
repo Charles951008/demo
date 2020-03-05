@@ -20,8 +20,9 @@ public class Recv1 {
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
 
-        int prefetchCount=1;
-        channel.basicQos(prefetchCount);//保证一次只分发一个
+        int prefetchCount = 1;
+        //保证一次只分发一个
+        channel.basicQos(prefetchCount);
 
 
         //定义一个消费者
@@ -42,12 +43,12 @@ public class Recv1 {
                 } finally {
                     System.out.println("[1] done");
 
-                    channel.basicAck(envelope.getDeliveryTag(),false);
+                    channel.basicAck(envelope.getDeliveryTag(), false);
                 }
             }
         };
-
-        boolean autoAck = false;//自动应答改成false
+        //自动应答改成false
+        boolean autoAck = false;
         channel.basicConsume(QUEUE_NAME, autoAck, defaultConsumer);
     }
 }

@@ -6,6 +6,17 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ * @author wsl
+ * @date
+ */
+@Mapper
 public interface CommunityRainMapper {
-    List<Map<String,Object>> getUserList(@Param(value = "areaname") String areaname);
+    /**
+     * 111
+     * @param areaName
+     * @return
+     */
+    List<Map<String,Object>> getUserList(@Param(value = "areaName") String areaName);
 }

@@ -6,6 +6,9 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author wsl
+ */
 public class Recv2 {
     private static final String QUEUE_NAME = "test_work_queue";
 
@@ -19,9 +22,9 @@ public class Recv2 {
         //声明队列
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
-
-        int prefetchCount=1;
-        channel.basicQos(prefetchCount);//保证一次只分发一个
+        //保证一次只分发一个
+        int prefetchCount = 1;
+        channel.basicQos(prefetchCount);
 
 
         //定义一个消费者
