@@ -75,5 +75,3 @@ logging:
           data2:
             mapper: debug
     root: INFO
-  file:
-    path: demolog
