@@ -7,6 +7,10 @@ import com.rabbitmq.client.Connection;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author Charles
+ * @Description send the message
+ */
 public class Send {
     private static final String EXCHANGE_NAME="test_exchange_fanout";
     public static void main(String[] args) throws IOException, TimeoutException {

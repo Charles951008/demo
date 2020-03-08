@@ -1,4 +1,4 @@
-package com.charles.demo.data1.pojo;
+package com.charles.demo.tools;
 
 import oracle.jdbc.OracleConnection;
 import java.sql.DriverManager;

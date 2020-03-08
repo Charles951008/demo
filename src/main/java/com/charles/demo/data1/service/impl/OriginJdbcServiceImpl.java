@@ -1,8 +1,8 @@
 package com.charles.demo.data1.service.impl;
 
 import com.charles.demo.controller.OriginJdbcController;
-import com.charles.demo.data1.pojo.JdbcUtils;
-import com.charles.demo.data1.pojo.OriginJdbcObject;
+import com.charles.demo.tools.JdbcUtils;
+import com.charles.demo.tools.OriginJdbcObject;
 import com.charles.demo.data1.service.IOriginJdbcService;
 import oracle.jdbc.OracleConnection;
 import org.slf4j.Logger;

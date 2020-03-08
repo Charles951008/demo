@@ -22,7 +22,8 @@ public class Recv2 {
         channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "");
 
         int prefetchCount = 1;
-        channel.basicQos(prefetchCount);//保证一次只分发一个
+        //保证一次只分发一个
+        channel.basicQos(prefetchCount);
 
 
         //定义一个消费者

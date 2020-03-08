@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8083
   servlet:
     context-path: /demo
 
@@ -28,10 +28,10 @@ spring:
       maxOpenPreparedStatements: 20
 
     data2:
-      username: citygis
-      password: citygis1613
-      jdbc-url: jdbc:oracle:thin:@172.16.25.49/citygis
-      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: root
+      password: 233666
+      jdbc-url: jdbc:mysql://localhost:3306
+      driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
 
       # 连接池的配置信息

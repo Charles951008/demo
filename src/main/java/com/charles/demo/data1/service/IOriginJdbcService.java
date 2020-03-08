@@ -1,6 +1,6 @@
 package com.charles.demo.data1.service;
 
-import com.charles.demo.data1.pojo.OriginJdbcObject;
+import com.charles.demo.tools.OriginJdbcObject;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
