@@ -1,7 +1,6 @@
 package com.charles.demo.data1.pojo;
 
 import oracle.jdbc.OracleConnection;
-
 import java.sql.DriverManager;
 import java.sql.SQLException;
 

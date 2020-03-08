@@ -24,6 +24,8 @@ public class CommunityInformationController {
     @Autowired
     ICommunityRainService communityInformationService2;
 
+
+
     /**
      * 测试本地数据的接口
      * @param areaName

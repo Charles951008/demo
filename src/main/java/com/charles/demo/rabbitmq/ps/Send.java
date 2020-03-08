@@ -16,7 +16,7 @@ public class Send {
         Channel channel = connection.createChannel();
 
         //声明交换机
-        channel.exchangeDeclare(EXCHANGE_NAME,"fanout");//分发
+        channel.exchangeDeclare(EXCHANGE_NAME,"fanout");
 
         //发送消息
         String msg="hello ps";

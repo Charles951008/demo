@@ -22,17 +22,18 @@ import java.util.List;
 @Service
 public class OriginJdbcServiceImpl implements IOriginJdbcService {
     private static final Logger log = LoggerFactory.getLogger(OriginJdbcController.class);
+
     @Override
-    public List<OriginJdbcObject> getOriginJdbcData(String areaName,Integer objectId){
+    public List<OriginJdbcObject> getOriginJdbcData(String areaName, Integer objectId) {
         try {
             String sql = "select t.小区地址,t.小区名称,t.OBJECTID,t.小区类型,t.街道名称 FROM GIS_COMMUNITY t WHERE 1=1 ";
-            System.out.println(objectId);
             if (!areaName.equals("")) {
                 sql += "AND t.区县='" + areaName + "'";
-
+                log.info("包含"+areaName+"地区的小区信息");
             }
-            if (objectId!=null) {
+            if (objectId != null) {
                 sql += "AND t.OBJECTID=" + objectId;
+                log.info("选择传入主键获取单条记录查询，供撒点定位等功能使用！");
             }
             OracleConnection conn = JdbcUtils.getConn();
 
