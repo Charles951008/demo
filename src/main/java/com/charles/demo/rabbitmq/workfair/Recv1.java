@@ -6,6 +6,9 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author Charles
+ */
 public class Recv1 {
     private static final String QUEUE_NAME = "test_work_queue";
 

@@ -4,8 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.charles.demo.data1.mapper.CommunityInformationMapper">
     <select id="getCommunityInf" resultType="java.util.HashMap">
+        <!--其中大小号必须转换 其他符号可选
+        &quot;为"即双引号
+        &lt;为<即小于号
+        &gt;为>即大于号-->
         select *
-        from (select "NAVICAT_TABLE".*, ROWNUM "NAVICAT_ROWNUM"
+        from (select &quot;NAVICAT_TABLE&quot;.*, ROWNUM &quot;NAVICAT_ROWNUM&quot;
         from(select
         t.小区经理名称,
         t.街道名称,

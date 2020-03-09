@@ -1,9 +1,8 @@
 package com.charles.demo.data2.service.impl;
 
-import com.charles.demo.data2.service.ICommunityRainService;
 import com.charles.demo.data2.mapper.CommunityRainMapper;
+import com.charles.demo.data2.service.ICommunityRainService;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -15,8 +14,14 @@ import java.util.Map;
  */
 @Service
 public class CommunityRainServiceImpl implements ICommunityRainService, Serializable {
-    @Autowired
-    private CommunityRainMapper communityInformationMapper;
+    /**
+     * spring官方目前已经推荐使用构造函数来进行自动注入 可以替换之前的@Autowired方法 因此@Autowired会报黄
+     */
+    private final CommunityRainMapper communityInformationMapper;
+
+    public CommunityRainServiceImpl(CommunityRainMapper communityInformationMapper) {
+        this.communityInformationMapper = communityInformationMapper;
+    }
 
     /**
      * @param areaName

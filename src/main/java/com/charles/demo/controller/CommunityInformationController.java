@@ -4,13 +4,13 @@ import com.charles.demo.data1.service.ICommunityInformationService;
 import com.charles.demo.data2.service.ICommunityRainService;
 import com.charles.demo.tools.ResultPage;
 import com.charles.demo.tools.ResultUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author wsl
@@ -19,15 +19,22 @@ import java.util.*;
 @CrossOrigin
 @RestController
 public class CommunityInformationController {
-    @Autowired
+    /**
+     * spring官方目前已经推荐使用构造函数来进行自动注入 可以替换之前的@Autowired方法 因此他会报黄
+     */
+    final
     ICommunityInformationService communityInformationService;
-    @Autowired
+    final
     ICommunityRainService communityInformationService2;
 
+    public CommunityInformationController(ICommunityInformationService communityInformationService, ICommunityRainService communityInformationService2) {
+        this.communityInformationService = communityInformationService;
+        this.communityInformationService2 = communityInformationService2;
+    }
 
 
     /**
-     * 测试本地数据的接口
+     * @Description 测试本地oracle数据库的接口
      * @param areaName
      * @return
      */
@@ -53,7 +60,7 @@ public class CommunityInformationController {
     }
 
     /**
-     * 测试49数据库的接口
+     * 测试本地Mysql数据库的接口
      * @param areaName
      * @return
      */

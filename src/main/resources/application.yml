@@ -1,4 +1,5 @@
 server:
+  name: Charles
   port: 8083
   servlet:
     context-path: /demo
@@ -75,3 +76,5 @@ logging:
           data2:
             mapper: debug
     root: INFO
+  file:
+    path: logs

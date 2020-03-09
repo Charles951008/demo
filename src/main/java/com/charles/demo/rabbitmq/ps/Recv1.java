@@ -6,6 +6,9 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author Charles
+ */
 public class Recv1 {
     private static final String QUEUE_NAME = "test_queue_fanout_email";
     private static final String EXCHANGE_NAME = "test_exchange_fanout";
@@ -47,8 +50,8 @@ public class Recv1 {
                 }
             }
         };
-
-        boolean autoAck = false;//自动应答改成false
+        //自动应答改成false
+        boolean autoAck = false;
         channel.basicConsume(QUEUE_NAME, autoAck, defaultConsumer);
     }
 }

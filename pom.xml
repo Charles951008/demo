@@ -152,7 +152,12 @@
             <artifactId>spring-cloud-context</artifactId>
             <version>2.1.5.RELEASE</version>
         </dependency>
-
+        <!--java必备工具类-->
+        <dependency>
+            <groupId>io.github.ljwlgl</groupId>
+            <artifactId>common-util</artifactId>
+            <version>2.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>

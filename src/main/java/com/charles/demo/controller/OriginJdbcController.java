@@ -1,7 +1,7 @@
 package com.charles.demo.controller;
 
-import com.charles.demo.tools.OriginJdbcObject;
 import com.charles.demo.data1.service.IOriginJdbcService;
+import com.charles.demo.tools.OriginJdbcObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,11 +19,13 @@ import java.util.List;
 @RestController
 public class OriginJdbcController {
     private static final Logger log = LoggerFactory.getLogger(OriginJdbcController.class);
-    final IOriginJdbcService originJdbcService;
+    final
+    IOriginJdbcService originJdbcService;
 
     public OriginJdbcController(IOriginJdbcService originJdbcService) {
         this.originJdbcService = originJdbcService;
     }
+
 
     @RequestMapping(value = "/TestJdbc")
     public List<OriginJdbcObject> OriginJdbcTest(

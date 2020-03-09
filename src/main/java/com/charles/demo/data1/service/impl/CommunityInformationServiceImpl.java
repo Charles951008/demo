@@ -4,7 +4,6 @@ import com.charles.demo.data1.mapper.CommunityInformationMapper;
 import com.charles.demo.data1.service.ICommunityInformationService;
 import com.charles.demo.tools.ResultPage;
 import com.charles.demo.tools.ResultUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -18,8 +17,14 @@ import java.util.Map;
 
 @Service
 public class CommunityInformationServiceImpl implements ICommunityInformationService, Serializable {
-    @Autowired
-    private CommunityInformationMapper communityInformationMapper;
+    /**
+     * spring官方目前已经推荐使用构造函数来进行自动注入 可以替换之前的@Autowired方法 因此@Autowired会报黄
+     */
+    private final CommunityInformationMapper communityInformationMapper;
+
+    public CommunityInformationServiceImpl(CommunityInformationMapper communityInformationMapper) {
+        this.communityInformationMapper = communityInformationMapper;
+    }
 
     /**
      * 社区信息分页写法
