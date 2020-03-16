@@ -32,18 +32,9 @@ public class CommunityInformationServiceImpl implements ICommunityInformationSer
      * @return ResultPage
      */
     @Override
-    public ResultPage getUserList(String areaName, ResultPage query) {
-        Integer currentPage = query.getCurrentPage();
-        Integer limits = query.getLimits();
-        Integer count = communityInformationMapper.getCommunityNum(areaName);
-        if (count == null) {
-            count = 0;
-        }
-        List<Integer> pageSize = ResultUtils.pageSize(currentPage, limits, count);
-        List<Map<String, Object>> result = communityInformationMapper.getCommunityInf(areaName, pageSize.get(0), pageSize.get(1));
-        ResultPage resultPage = ResultUtils.ofSuccessResultPage(result, result == null ? 0 : result.size(), limits,
-                currentPage, pageSize.get(2), count);
-        return resultPage;
+    public List<Map<String,Object>> getUserList(String areaName) {
+        List<Map<String, Object>> result = communityInformationMapper.getCommunityInf(areaName);
+        return result;
     }
 
 }

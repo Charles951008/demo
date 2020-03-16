@@ -4,6 +4,9 @@ import com.charles.demo.tools.ResultPage;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author wsl
  * @date
@@ -16,6 +19,5 @@ public interface ICommunityInformationService {
      * @param query
      * @return
      */
-    ResultPage getUserList(@Param(value = "areaName") String areaName,
-                           @Param(value = "query") ResultPage query);
+    List<Map<String,Object>> getUserList(@Param(value = "areaName") String areaName);
 }

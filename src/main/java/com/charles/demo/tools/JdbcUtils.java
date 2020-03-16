@@ -10,9 +10,9 @@ import java.sql.SQLException;
  */
 public class JdbcUtils {
     public static OracleConnection getConn() {
-        String driver = "oracle.jdbc.driver.OracleDriver";
-        String url = "jdbc:oracle:thin:@DESKTOP-QA8UILO/citygis";
-        String username = "system";
+        String driver = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://192.168.1.4:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false";
+        String username = "root";
         String password = "233666";
         OracleConnection conn = null;
         try {

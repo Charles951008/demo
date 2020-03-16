@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.charles.demo.data2.mapper.CommunityRainMapper">
     <select id="getUserList" resultType="java.util.HashMap">
-        SELECT t.* FROM system.giswater t
+        SELECT t.* FROM giswater t
         where 1=1
         <if test="areaName!=null and areaName!=''">
             and t.QUYU=#{areaName}

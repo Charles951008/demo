@@ -8,9 +8,7 @@
         &quot;为"即双引号
         &lt;为<即小于号
         &gt;为>即大于号-->
-        select *
-        from (select &quot;NAVICAT_TABLE&quot;.*, ROWNUM &quot;NAVICAT_ROWNUM&quot;
-        from(select
+        select
         t.小区经理名称,
         t.街道名称,
         t.MINX,
@@ -21,17 +19,15 @@
         t.小区类型,
         t.OBJECTID,
         t.总门牌数
-         from GIS_COMMUNITY t
+        from gis_community t
         where 1=1
         <if test="areaName!=null and areaName!=''">
             and t.区县=#{areaName}
-        </if>)"NAVICAT_TABLE"
-        WHERE ROWNUM &lt;= #{endItem})
-        WHERE "NAVICAT_ROWNUM" &gt;= #{startItem}
+        </if>
     </select>
 
     <select id="getCommunityNum" resultType="Integer">
-        select count(*) from GIS_COMMUNITY
+        select count(*) from gis_community
         where 1=1
         <if test="areaName!=null and areaName!=''">
             and 区县=#{areaName}

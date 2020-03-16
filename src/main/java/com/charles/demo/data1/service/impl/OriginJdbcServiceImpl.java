@@ -26,10 +26,13 @@ public class OriginJdbcServiceImpl implements IOriginJdbcService {
     @Override
     public List<OriginJdbcObject> getOriginJdbcData(String areaName, Integer objectId) {
         try {
+            /*
+              以下是jdbc原生使用方法 明显觉得十分麻烦 况且这还是我在配置了jdbcUtil的情况下
+             */
             String sql = "select t.小区地址,t.小区名称,t.OBJECTID,t.小区类型,t.街道名称 FROM GIS_COMMUNITY t WHERE 1=1 ";
             if (!areaName.equals("")) {
                 sql += "AND t.区县='" + areaName + "'";
-                log.info("包含"+areaName+"地区的小区信息");
+                log.info("包含" + areaName + "地区的小区信息");
             }
             if (objectId != null) {
                 sql += "AND t.OBJECTID=" + objectId;
@@ -41,9 +44,9 @@ public class OriginJdbcServiceImpl implements IOriginJdbcService {
             ResultSet resultSet = st.executeQuery();
 
             List<OriginJdbcObject> result = new LinkedList<>();
-/**
- * @Description Jdbc原生的数据处理是一次输出一条数据 需要自己动手将数据记录下来
- */
+            /*
+              @Description Jdbc原生的数据处理是一次输出一条数据 需要自己动手将数据记录下来
+             */
             while (resultSet.next()) {
                 OriginJdbcObject originJdbcObject = new OriginJdbcObject();
                 originJdbcObject.setCommunityAddress(resultSet.getString("小区地址"));

@@ -20,9 +20,7 @@ public interface CommunityInformationMapper {
      * @param startItem
      * @return
      */
-    List<Map<String,Object>> getCommunityInf(@Param(value = "areaName") String areaName,
-                                             @Param(value = "startItem") Integer startItem,
-                                             @Param(value = "endItem") Integer endItem);
+    List<Map<String,Object>> getCommunityInf(@Param(value = "areaName") String areaName);
 
     /**
      * 获取全部数据条数

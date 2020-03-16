@@ -2,7 +2,6 @@ package com.charles.demo.data1.service;
 
 import com.charles.demo.tools.OriginJdbcObject;
 import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 
 /**
@@ -11,10 +10,10 @@ import java.util.List;
  */
 public interface IOriginJdbcService {
     /**
-     *
-     * @param areaName
-     * @param objectId
-     * @return
+     *jdbc原始方法接口
+     * @param areaName 区县
+     * @param objectId 主键
+     * @return List<OriginJdbcObject>
      */
     List<OriginJdbcObject> getOriginJdbcData(@Param(value = "areaName") String areaName,
                                              @Param(value = "objectId") Integer objectId);

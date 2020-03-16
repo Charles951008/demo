@@ -7,10 +7,10 @@ server:
 spring:
   datasource:
     data1:
-      username: system
+      username: root
       password: 233666
-      jdbc-url: jdbc:oracle:thin:@DESKTOP-QA8UILO/citygis
-      driver-class-name: oracle.jdbc.driver.OracleDriver
+      jdbc-url: jdbc:mysql://192.168.1.4:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+      driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
 
       # 连接池的配置信息
@@ -31,9 +31,14 @@ spring:
     data2:
       username: root
       password: 233666
-      jdbc-url: jdbc:mysql://localhost:3306
+      jdbc-url: jdbc:mysql://192.168.1.4:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
       driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
+#      username: root
+#      password: 233666
+#      jdbc-url: jdbc:mysql://localhost:3306/system?useSSL=false&useUnicode=true&characterEncoding=utf8
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
 
       # 连接池的配置信息
       filters: stat
@@ -78,3 +83,10 @@ logging:
     root: INFO
   file:
     path: logs
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true  #开启优化，如果开启优化，在分页页码结果没有数据的时候,会显示有数据的页码数据
+  supportMethodsArguments: true #是否支持接口参数来传递分页参数，默认false
+  pageSizeZero: false #pageSize=0 返回所有
+  params: count=countSql

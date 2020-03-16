@@ -3,7 +3,8 @@ package com.charles.demo.controller;
 import com.charles.demo.data1.service.ICommunityInformationService;
 import com.charles.demo.data2.service.ICommunityRainService;
 import com.charles.demo.tools.ResultPage;
-import com.charles.demo.tools.ResultUtils;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,33 +35,38 @@ public class CommunityInformationController {
 
 
     /**
-     * @Description 测试本地oracle数据库的接口
      * @param areaName
      * @return
+     * @Description 测试本地oracle数据库的接口
      */
     @RequestMapping(value = "/wsl111")
     public ResultPage findCommunity(
             @RequestParam(value = "areaName", defaultValue = "", required = false) String areaName,
-            @RequestParam(value = "currentPage",defaultValue = "",required = false) Integer currentPage,
-            @RequestParam(value = "limits",defaultValue = "",required = false) Integer limits
+            @RequestParam(value = "currentPage", defaultValue = "", required = false) Integer currentPage,
+            @RequestParam(value = "limits", defaultValue = "", required = false) Integer limits
     ) {
-        Boolean hasPage = true;
-        if (limits <= 0 || currentPage <= 0) {
 
-            hasPage = false;
-        }
+        Page page = PageHelper.startPage(currentPage, limits);
+        PageHelper.orderBy("OBJECTID ASC");
+        List<Map<String, Object>> resultPage = communityInformationService.getUserList(areaName);
 
-        ResultPage resultPage = ResultUtils.ofFailResultPage();
+        long total = page.getTotal();
+        ResultPage result = new ResultPage();
+        result.setData(resultPage);
         // 设置当前页
-        resultPage.setCurrentPage(currentPage);
+        result.setCurrentPage(currentPage);
+        result.setCurrentPageLimit(currentPage);
         // 设置每页条数
-        resultPage.setLimits(limits);
-        resultPage = communityInformationService.getUserList(areaName,resultPage);
-        return resultPage;
+        result.setLimits(limits);
+
+
+        result.setCountItem((int) total);
+        return result;
     }
 
     /**
      * 测试本地Mysql数据库的接口
+     *
      * @param areaName
      * @return
      */
@@ -71,5 +77,10 @@ public class CommunityInformationController {
         List<Map<String, Object>> result = communityInformationService2.getUserList(areaName);
         return result;
 
+    }
+
+    @RequestMapping(value = "/hello")
+    public String hello() {
+        return "hello!!!!!  Beauty!!!!!";
     }
 }
