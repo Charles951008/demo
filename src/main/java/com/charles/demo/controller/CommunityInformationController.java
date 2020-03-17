@@ -75,10 +75,27 @@ public class CommunityInformationController {
      * @return
      */
     @RequestMapping(value = "/wsl222")
-    public List<Map<String, Object>> findWaterCollect(
-            @RequestParam(value = "areaName", defaultValue = "", required = false) String areaName
+    public ResultPage findWaterCollect(
+            @RequestParam(value = "areaName", defaultValue = "", required = false) String areaName,
+            @RequestParam(value = "currentPage", defaultValue = "", required = false) Integer currentPage,
+            @RequestParam(value = "limits", defaultValue = "", required = false) Integer limits
     ) {
-        List<Map<String, Object>> result = communityInformationService2.getUserList(areaName);
+        // 设置当前页
+        // 设置每页条数
+        Page page = PageHelper.startPage(currentPage, limits);
+        PageHelper.orderBy("STATIONID ASC");
+        List<Map<String, Object>> resultPage = communityInformationService2.getUserList(areaName);
+        long total = page.getTotal();
+        ResultPage result = new ResultPage();
+        result.setData(resultPage);
+        result.setCurrentPage(currentPage);
+        result.setLimits(limits);
+        result.setCountItem((int) total);
+        result.setCount(result.getCountItem()/limits+1);
+        if(result.data==null || result.data.isEmpty()){
+            result.setMessage(Result.SEARCH_FOR_NO_DATA);
+            result.setStatus(Result.SEARCH_NODATA_CODE);
+        }
         return result;
 
     }

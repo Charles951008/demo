@@ -1,4 +1,4 @@
-package com.charles.demo.datasource;
+package com.charles.demo.configs;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;

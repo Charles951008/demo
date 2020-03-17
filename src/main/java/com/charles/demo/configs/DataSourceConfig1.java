@@ -1,4 +1,4 @@
-package com.charles.demo.datasource;
+package com.charles.demo.configs;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;

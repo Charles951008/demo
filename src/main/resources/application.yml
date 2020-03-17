@@ -5,6 +5,17 @@ server:
     context-path: /demo
 
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: forwsl
+    password: forwsl
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 50
+        prefetch: 5
+
   devtools:
     restart:
       enabled: true  #设置开启热部署
@@ -35,7 +46,7 @@ spring:
     data2:
       username: root
       password: 233666
-      jdbc-url: jdbc:mysql://192.168.1.4:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+      jdbc-url: jdbc:mysql://192.168.1.4:3306/citygis?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
       driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
 #      username: root
