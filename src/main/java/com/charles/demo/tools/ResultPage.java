@@ -1,5 +1,8 @@
 package com.charles.demo.tools;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author wsl
  * @ClassName	ResultPage
@@ -12,10 +15,6 @@ public class ResultPage extends Result {
      */
     private static final long serialVersionUID = 3159620767585997597L;
 
-    /**
-     * 当前页数据条数
-     */
-    private Integer currentPageLimit =NUMBER_ZERO;
     /**
      * 每页数据条数
      */
@@ -36,25 +35,28 @@ public class ResultPage extends Result {
 
     public static final Integer NUMBER_ZERO = 0;
 
+    private String status="200";
+    private String message="成功！";
+
     public ResultPage() {
         super();
     }
 
-    public ResultPage(String status, String message, Object data) {
+    public ResultPage(String status, String message, List<Map<String, Object>> data) {
         super(status, message, data);
     }
 
-    public ResultPage(Integer currentPageLimit, Integer limits, Integer currentPage, Integer count) {
+    public ResultPage( Integer limits, Integer currentPage, Integer count) {
         super();
-        this.currentPageLimit = currentPageLimit;
+
         this.limits = limits;
         this.currentPage = currentPage;
         this.count = count;
     }
 
-    public ResultPage(Object data,Integer currentPageLimit, Integer limits, Integer currentPage, Integer count) {
+    public ResultPage(List<Map<String, Object>> data, Integer limits, Integer currentPage, Integer count) {
         super(Result.SUCCESS, Result.SUCCESS_MESSAGE, data);
-        this.currentPageLimit = currentPageLimit;
+
         this.limits = limits;
         this.currentPage = currentPage;
         this.count = count;
@@ -62,9 +64,8 @@ public class ResultPage extends Result {
 
 
 
-    public ResultPage(Object data,Integer currentPageLimit, Integer limits, Integer currentPage, Integer count, Integer countItem) {
+    public ResultPage(List<Map<String, Object>> data, Integer limits, Integer currentPage, Integer count, Integer countItem) {
         super(Result.SUCCESS, Result.SUCCESS_MESSAGE, data);
-        this.currentPageLimit = currentPageLimit;
         this.limits = limits;
         this.currentPage = currentPage;
         this.count = count;
@@ -73,20 +74,14 @@ public class ResultPage extends Result {
 
     public ResultPage(Integer currentPageLimit, Integer limits, Integer currentPage, Integer count, Integer countItem) {
         super();
-        this.currentPageLimit = currentPageLimit;
+
         this.limits = limits;
         this.currentPage = currentPage;
         this.count = count;
         this.countItem = countItem;
     }
 
-    public Integer getCurrentPageLimit() {
-        return currentPageLimit;
-    }
 
-    public void setCurrentPageLimit(Integer currentPageLimit) {
-        this.currentPageLimit = currentPageLimit;
-    }
 
     public Integer getLimits() {
         return limits;
@@ -120,4 +115,20 @@ public class ResultPage extends Result {
         this.countItem = countItem;
     }
 
+    @Override
+    public String getStatus() {
+        return status;
+    }
+    @Override
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    @Override
+    public String getMessage() {
+        return message;
+    }
+    @Override
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

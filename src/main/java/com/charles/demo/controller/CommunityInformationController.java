@@ -2,6 +2,7 @@ package com.charles.demo.controller;
 
 import com.charles.demo.data1.service.ICommunityInformationService;
 import com.charles.demo.data2.service.ICommunityRainService;
+import com.charles.demo.tools.Result;
 import com.charles.demo.tools.ResultPage;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -55,12 +56,15 @@ public class CommunityInformationController {
         result.setData(resultPage);
         // 设置当前页
         result.setCurrentPage(currentPage);
-        result.setCurrentPageLimit(currentPage);
         // 设置每页条数
         result.setLimits(limits);
 
-
         result.setCountItem((int) total);
+        result.setCount(result.getCountItem()/limits+1);
+        if(result.data==null || result.data.isEmpty()){
+            result.setMessage(Result.SEARCH_FOR_NO_DATA);
+            result.setStatus(Result.SEARCH_NODATA_CODE);
+        }
         return result;
     }
 

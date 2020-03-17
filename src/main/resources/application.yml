@@ -5,6 +5,10 @@ server:
     context-path: /demo
 
 spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+
   datasource:
     data1:
       username: root

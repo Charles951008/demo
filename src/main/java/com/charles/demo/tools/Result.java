@@ -1,6 +1,8 @@
 package com.charles.demo.tools;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author wsl
@@ -16,15 +18,15 @@ public class Result implements Serializable {
     /**
      * 结果码
      */
-    private String status = FAIL;
+    private String status = SUCCESS;
     /**
      * 消息
      */
-    private String message = FAIL_MESSAGE;
+    private String message = SUCCESS_MESSAGE;
     /**
      * 数据
      */
-    private Object data = DATA_NULL;
+    public List<Map<String, Object>> data = null;
     /**
      * 成功返回码
      */
@@ -33,6 +35,7 @@ public class Result implements Serializable {
      * 失败返回码
      */
     public final static String FAIL = "0";
+    public final static String SEARCH_NODATA_CODE = "303";
     /**
      * 成功返回消息
      */
@@ -41,21 +44,29 @@ public class Result implements Serializable {
      * 失败返回消息
      */
     public final static String FAIL_MESSAGE = "失败";
+
+    public final static String SEARCH_FOR_NO_DATA = "查无数据!请检查参数！";
     /**
      * 数据空
      */
-    public final static String DATA_NULL = "";
+    public final static List<Map<String, Object>> DATA_NULL = null;
 
 
 
     public Result() {
         super();
     }
-    public Result(String status, String message, Object data) {
+    public Result(String status, String message, List<Map<String, Object>> data) {
         super();
         this.status = status;
         this.message = message;
         this.data = data;
+    }
+    public Result(String status, String message, String data) {
+        super();
+        this.status = status;
+        this.message = message;
+        this.data = DATA_NULL;
     }
     public String getStatus() {
         return status;
@@ -72,7 +83,7 @@ public class Result implements Serializable {
     public Object getData() {
         return data;
     }
-    public void setData(Object data) {
+    public void setData(List<Map<String, Object>> data) {
         this.data = data;
     }
 
