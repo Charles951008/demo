@@ -2,8 +2,6 @@ package com.charles.demo.data1.service.impl;
 
 import com.charles.demo.data1.mapper.CommunityInformationMapper;
 import com.charles.demo.data1.service.ICommunityInformationService;
-import com.charles.demo.tools.ResultPage;
-import com.charles.demo.tools.ResultUtils;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;

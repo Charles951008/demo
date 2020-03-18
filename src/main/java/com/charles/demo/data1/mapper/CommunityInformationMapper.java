@@ -16,8 +16,6 @@ public interface CommunityInformationMapper {
     /**
      * 获取单页查询结果
      * @param areaName
-     * @param endItem
-     * @param startItem
      * @return
      */
     List<Map<String,Object>> getCommunityInf(@Param(value = "areaName") String areaName);

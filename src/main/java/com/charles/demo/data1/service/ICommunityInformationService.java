@@ -16,7 +16,6 @@ public interface ICommunityInformationService {
     /**
      * 111
      * @param areaName
-     * @param query
      * @return
      */
     List<Map<String,Object>> getUserList(@Param(value = "areaName") String areaName);
