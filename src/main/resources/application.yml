@@ -105,3 +105,15 @@ pagehelper:
   supportMethodsArguments: true #是否支持接口参数来传递分页参数，默认false
   pageSizeZero: false #pageSize=0 返回所有
   params: count=countSql
+
+log:
+  user:
+    queue:
+      name: ${spring.rabbitmq.host}.log.user.queue
+
+    exchange:
+      name: ${spring.rabbitmq.host}.log.user.exchange
+
+    routing:
+      key:
+        value: ${spring.rabbitmq.host}.log.user.routing.key
