@@ -64,6 +64,14 @@ public class CommunityRainServiceImpl implements ICommunityRainService, Serializ
         result.setCurrentPage(currentPage);
         result.setLimits(limits);
         result.setCount(result.getCountItem()/limits+1);
+        /* 页码传错容错 低于第1页或者高于最高页会返回第一页或者最高页 */
+        if(currentPage>result.getCount()){
+            result.setCurrentPage(result.getCount());
+            result.setMention(Result.PAGE_NUMBER_IS_WRONG);
+        }else if(currentPage<=0){
+            result.setCurrentPage(1);
+            result.setMention(Result.PAGE_NUMBER_IS_WRONG);
+        }
         result.setData(communityList);
         if(result.data==null || result.data.isEmpty()){
             result.setMessage(Result.SEARCH_FOR_NO_DATA);

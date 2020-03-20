@@ -24,6 +24,10 @@ public class Result implements Serializable {
      */
     private String message = SUCCESS_MESSAGE;
     /**
+     * 风险提示
+     */
+    private String mention=PAGE_NUMBER_IS_WRONG;
+    /**
      * 数据
      */
     public List<Map<String, Object>> data = null;
@@ -46,6 +50,8 @@ public class Result implements Serializable {
     public final static String FAIL_MESSAGE = "失败";
 
     public final static String SEARCH_FOR_NO_DATA = "查无数据!请检查参数！";
+
+    public final static String PAGE_NUMBER_IS_WRONG="页码传入错误，系统已处理！";
     /**
      * 数据空
      */
@@ -61,6 +67,13 @@ public class Result implements Serializable {
         this.status = status;
         this.message = message;
         this.data = data;
+    }
+    public Result(String status, String message,String mention, List<Map<String, Object>> data) {
+        super();
+        this.status = status;
+        this.message = message;
+        this.data = data;
+        this.mention=mention;
     }
     public Result(String status, String message, String data) {
         super();

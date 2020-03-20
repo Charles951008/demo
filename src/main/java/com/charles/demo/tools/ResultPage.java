@@ -37,6 +37,15 @@ public class ResultPage extends Result {
 
     private String status="200";
     private String message="成功！";
+    private String mention="正常！";
+
+    public String getMention() {
+        return mention;
+    }
+
+    public void setMention(String mention) {
+        this.mention = mention;
+    }
 
     public ResultPage() {
         super();
@@ -65,16 +74,7 @@ public class ResultPage extends Result {
 
 
     public ResultPage(List<Map<String, Object>> data, Integer limits, Integer currentPage, Integer count, Integer countItem) {
-        super(Result.SUCCESS, Result.SUCCESS_MESSAGE, data);
-        this.limits = limits;
-        this.currentPage = currentPage;
-        this.count = count;
-        this.countItem = countItem;
-    }
-
-    public ResultPage(Integer currentPageLimit, Integer limits, Integer currentPage, Integer count, Integer countItem) {
-        super();
-
+        super(Result.SUCCESS, Result.SUCCESS_MESSAGE,Result.PAGE_NUMBER_IS_WRONG, data);
         this.limits = limits;
         this.currentPage = currentPage;
         this.count = count;
@@ -115,20 +115,4 @@ public class ResultPage extends Result {
         this.countItem = countItem;
     }
 
-    @Override
-    public String getStatus() {
-        return status;
-    }
-    @Override
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    @Override
-    public String getMessage() {
-        return message;
-    }
-    @Override
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
