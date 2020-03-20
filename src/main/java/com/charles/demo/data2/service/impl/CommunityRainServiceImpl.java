@@ -46,6 +46,17 @@ public class CommunityRainServiceImpl implements ICommunityRainService, Serializ
                                   @Param(value = "limits") Integer limits
     ) {
         ResultPage result = new ResultPage();
+        int totalNum = communityRainMapper.getUserTotal(areaName);
+        result.setCountItem(totalNum);
+        /* 页码传错容错 低于第1页或者高于最高页会返回第一页或者最高页 */
+        if(currentPage>(totalNum/limits+1)){
+            currentPage=totalNum/limits+1;
+            result.setMention(Result.PAGE_NUMBER_IS_WRONG);
+        }
+        else if(currentPage<=0){
+            currentPage=1;
+            result.setMention(Result.PAGE_NUMBER_IS_WRONG);
+        }
         //查询缓存
         List<Map<String, Object>> communityList = redisTemplate.opsForValue().get("allCommunity" + areaName + "'s tablePage " + currentPage);
 
@@ -55,25 +66,17 @@ public class CommunityRainServiceImpl implements ICommunityRainService, Serializ
             PageHelper.orderBy("STATIONID ASC");
             communityList = communityRainMapper.getUserList(areaName);
             long total = page.getTotal();
-            result.setCountItem((int)total);
-            redisTemplate.opsForValue().set("allCommunity" + areaName + "'s tablePage " + currentPage, communityList);
-        }else{
-            int countItem=communityRainMapper.getUserTotal(areaName);
-            result.setCountItem(countItem);
+            result.setCountItem((int) total);
+            if(!communityList.isEmpty()){
+                redisTemplate.opsForValue().set("allCommunity" + areaName + "'s tablePage " + currentPage, communityList);
+            }
         }
         result.setCurrentPage(currentPage);
         result.setLimits(limits);
-        result.setCount(result.getCountItem()/limits+1);
-        /* 页码传错容错 低于第1页或者高于最高页会返回第一页或者最高页 */
-        if(currentPage>result.getCount()){
-            result.setCurrentPage(result.getCount());
-            result.setMention(Result.PAGE_NUMBER_IS_WRONG);
-        }else if(currentPage<=0){
-            result.setCurrentPage(1);
-            result.setMention(Result.PAGE_NUMBER_IS_WRONG);
-        }
+        result.setCount(result.getCountItem() / limits + 1);
+
         result.setData(communityList);
-        if(result.data==null || result.data.isEmpty()){
+        if (result.data == null || result.data.isEmpty()) {
             result.setMessage(Result.SEARCH_FOR_NO_DATA);
             result.setStatus(Result.SEARCH_NODATA_CODE);
         }

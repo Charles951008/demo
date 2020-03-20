@@ -74,7 +74,7 @@ public class CommunityInformationController {
      * @param areaName
      * @return
      */
-    @RequestMapping(value = "/wsl222")
+    @RequestMapping(value = "/rainPageRC")
     public ResultPage findWaterCollect(
             @RequestParam(value = "areaName", defaultValue = "", required = false) String areaName,
             @RequestParam(value = "currentPage", defaultValue = "", required = false) Integer currentPage,
