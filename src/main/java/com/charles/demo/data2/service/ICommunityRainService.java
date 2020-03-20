@@ -1,5 +1,6 @@
 package com.charles.demo.data2.service;
 
+import com.charles.demo.tools.ResultPage;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,5 +17,7 @@ public interface ICommunityRainService {
      * @param areaName
      * @return
      */
-    List<Map<String,Object>> getUserList(@Param(value = "areaName") String areaName);
+    ResultPage getUserList(@Param(value = "areaName") String areaName,
+                           @Param(value = "limits") Integer limits,
+                           @Param(value = "currentPage")Integer currentPage);
 }

@@ -19,4 +19,11 @@ public interface CommunityRainMapper {
      * @return
      */
     List<Map<String,Object>> getUserList(@Param(value = "areaName") String areaName);
+
+    /**
+     * 11
+     * @param areaName
+     * @return
+     */
+    Integer getUserTotal(@Param(value = "areaName") String areaName);
 }

@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.charles.demo.data2.mapper.CommunityRainMapper">
+
+
     <select id="getUserList" resultType="java.util.HashMap">
         SELECT t.* FROM giswater t
         where 1=1
@@ -10,4 +12,15 @@
             and t.QUYU=#{areaName}
         </if>
     </select>
+
+
+    <select id="getUserTotal" resultType="Integer">
+        SELECT count(*) FROM giswater
+        where 1=1
+        <if test="areaName!=null and areaName!=''">
+            and QUYU=#{areaName}
+        </if>
+    </select>
+
+
 </mapper>
