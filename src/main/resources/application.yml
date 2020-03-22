@@ -70,16 +70,17 @@ spring:
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
 
-redis:
-  jedis:
-    pool:
-      max-active: 100
-      max-wait: 10000
-      max-idle: 10
-  host: 192.168.1.4
-  port: 6379
-  password: 123456
-  timeout: 1000
+  redis:
+    jedis:
+      pool:
+        max-active: 100
+        max-wait: 10000
+        max-idle: 10
+    host: localhost #在服务端发布URL
+    #host: 192.168.1.4 #在编码端测试URL
+    port: 6379
+    password: 233666
+    timeout: 1000
 
 logging:
   pattern:

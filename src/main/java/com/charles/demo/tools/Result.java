@@ -51,7 +51,7 @@ public class Result implements Serializable {
 
     public final static String SEARCH_FOR_NO_DATA = "查无数据!请检查参数！";
 
-    public final static String PAGE_NUMBER_IS_WRONG="页码传入错误，系统已处理！";
+    public final static String PAGE_NUMBER_IS_WRONG="页码与数据不匹配，系统已处理！";
     /**
      * 数据空
      */
