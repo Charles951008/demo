@@ -27,4 +27,5 @@ public interface CommunityInformationMapper {
      */
     Integer getCommunityNum(
             @Param(value = "areaName") String areaName);
+
 }

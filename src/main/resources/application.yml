@@ -24,7 +24,7 @@ spring:
     data1:
       username: root
       password: 233666
-      jdbc-url: jdbc:mysql://192.168.1.4:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+      jdbc-url: jdbc:mysql://localhost:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
       driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
 
@@ -46,7 +46,7 @@ spring:
     data2:
       username: root
       password: 233666
-      jdbc-url: jdbc:mysql://192.168.1.4:3306/citygis?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+      jdbc-url: jdbc:mysql://localhost:3306/charles?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
       driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
 #      username: root
@@ -79,7 +79,6 @@ spring:
     host: localhost #在服务端发布URL
     #host: 192.168.1.4 #在编码端测试URL
     port: 6379
-    password: 233666
     timeout: 1000
 
 logging:

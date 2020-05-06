@@ -52,10 +52,12 @@ public class CommunityRainServiceImpl implements ICommunityRainService, Serializ
         if(currentPage>(totalNum/limits+1)){
             currentPage=totalNum/limits+1;
             result.setMention(Result.PAGE_NUMBER_IS_WRONG);
+
         }
         else if(currentPage<=0){
             currentPage=1;
             result.setMention(Result.PAGE_NUMBER_IS_WRONG);
+
         }
         //查询缓存
         List<Map<String, Object>> communityList = redisTemplate.opsForValue().get("allCommunity" + areaName + "'s tablePage " + currentPage);

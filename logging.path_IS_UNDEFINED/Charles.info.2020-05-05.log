@@ -1,0 +1,83 @@
+2020-05-05 15:05:04 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-05 15:05:04 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-05 15:05:04 [restartedMain] INFO  com.charles.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-05-05 15:05:05 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-05 15:05:05 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-05 15:05:05 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-05 15:05:05 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=6a651e56-059b-3a3a-a9af-72aa37db4691
+2020-05-05 15:05:05 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b4013030] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-05 15:05:05 [restartedMain] INFO  o.s.w.s.a.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-05-05 15:05:05 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2020-05-05 15:05:05 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2020-05-05 15:05:05 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-05 15:05:05 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-05 15:05:05 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-05-05 15:05:05 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1140 ms
+2020-05-05 15:05:06 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-05 15:05:06 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-05 15:05:06 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2020-05-05 15:05:06 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path '/demo'
+2020-05-05 15:05:06 [restartedMain] INFO  com.charles.demo.DemoApplication - Started DemoApplication in 3.119 seconds (JVM running for 3.855)
+2020-05-05 15:10:18 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-05 15:13:13 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-05 15:13:13 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-05 15:13:14 [restartedMain] INFO  com.charles.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-05-05 15:13:14 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-05 15:13:14 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-05 15:13:14 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-05-05 15:13:14 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=6a651e56-059b-3a3a-a9af-72aa37db4691
+2020-05-05 15:13:15 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$af14dfbc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-05 15:13:15 [restartedMain] INFO  o.s.w.s.a.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-05-05 15:13:15 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2020-05-05 15:13:15 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2020-05-05 15:13:15 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-05 15:13:15 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-05 15:13:15 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-05-05 15:13:15 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1146 ms
+2020-05-05 15:13:16 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-05 15:13:16 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-05-05 15:13:16 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2020-05-05 15:13:16 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path '/demo'
+2020-05-05 15:13:16 [restartedMain] INFO  com.charles.demo.DemoApplication - Started DemoApplication in 3.138 seconds (JVM running for 3.909)
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2020-05-05 15:13:29 [http-nio-8083-exec-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2020-05-05 15:13:29 [http-nio-8083-exec-1] ERROR o.a.c.c.C.[.[.[/demo].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/demo] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379] with root cause
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-05 15:15:36 [http-nio-8083-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2020-05-05 15:15:36 [http-nio-8083-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2020-05-05 15:17:53 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m53s697ms).
+2020-05-05 15:18:00 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1m53s693ms).
+2020-05-05 15:25:49 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m25s702ms).
+2020-05-05 15:25:56 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=7m25s705ms).
+2020-05-05 16:04:57 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m37s976ms).
+2020-05-05 16:05:04 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=38m37s974ms).
+2020-05-05 16:55:24 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m27s532ms).
+2020-05-05 16:55:31 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=35m27s538ms).
+2020-05-05 17:35:10 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m45s990ms).
+2020-05-05 17:35:18 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=6m45s998ms).
+2020-05-05 18:14:00 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m19s908ms).
+2020-05-05 18:14:07 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=38m19s918ms).
+2020-05-05 18:20:24 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m23s695ms).
+2020-05-05 18:20:31 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=6m23s702ms).
+2020-05-05 18:48:58 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-05 18:48:58 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-05-05 18:48:58 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-05-05 18:48:58 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2020-05-05 18:48:58 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.

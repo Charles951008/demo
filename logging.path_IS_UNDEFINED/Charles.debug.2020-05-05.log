@@ -1,0 +1,66 @@
+2020-05-05 15:05:04 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-05 15:13:13 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-05 15:13:29 [http-nio-8083-exec-1] DEBUG c.c.d.d.mapper.CommunityRainMapper.getUserTotal - ==>  Preparing: SELECT count(*) FROM giswater where 1=1 and QUYU=? 
+2020-05-05 15:13:29 [http-nio-8083-exec-1] DEBUG c.c.d.d.mapper.CommunityRainMapper.getUserTotal - ==> Parameters: 宝山区(String)
+2020-05-05 15:13:29 [http-nio-8083-exec-1] DEBUG c.c.d.d.mapper.CommunityRainMapper.getUserTotal - <==      Total: 1
+2020-05-05 15:13:29 [http-nio-8083-exec-1] ERROR o.a.c.c.C.[.[.[/demo].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/demo] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379] with root cause
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.d.mapper.CommunityRainMapper.getUserTotal - ==>  Preparing: SELECT count(*) FROM giswater where 1=1 and QUYU=? 
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.d.mapper.CommunityRainMapper.getUserTotal - ==> Parameters: 宝山区(String)
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.d.mapper.CommunityRainMapper.getUserTotal - <==      Total: 1
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.d.m.CommunityRainMapper.getUserList_COUNT - ==>  Preparing: SELECT count(0) FROM giswater t WHERE 1 = 1 AND t.QUYU = ? 
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.d.m.CommunityRainMapper.getUserList_COUNT - ==> Parameters: 宝山区(String)
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.d.m.CommunityRainMapper.getUserList_COUNT - <==      Total: 1
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.data2.mapper.CommunityRainMapper.getUserList - ==>  Preparing: SELECT t.* FROM giswater t WHERE 1 = 1 AND t.QUYU = ? order by STATIONID ASC LIMIT ?, ? 
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.data2.mapper.CommunityRainMapper.getUserList - ==> Parameters: 宝山区(String), 10(Integer), 10(Integer)
+2020-05-05 15:15:26 [http-nio-8083-exec-4] DEBUG c.c.d.data2.mapper.CommunityRainMapper.getUserList - <==      Total: 10
+2020-05-05 15:15:36 [http-nio-8083-exec-5] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==>  Preparing: SELECT count(0) FROM gis_community t WHERE 1 = 1 AND t.区县 = ? 
+2020-05-05 15:15:36 [http-nio-8083-exec-5] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==> Parameters: 宝山区(String)
+2020-05-05 15:15:36 [http-nio-8083-exec-5] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - <==      Total: 1
+2020-05-05 15:15:36 [http-nio-8083-exec-5] DEBUG c.c.d.d.m.C.getCommunityInf - ==>  Preparing: SELECT t.小区经理名称, t.街道名称, t.MINX, t.MINY, t.小区地址, t.所属区县, t.小区名称, t.小区类型, t.OBJECTID, t.总门牌数 FROM gis_community t WHERE 1 = 1 AND t.区县 = ? order by OBJECTID ASC LIMIT ?, ? 
+2020-05-05 15:15:36 [http-nio-8083-exec-5] DEBUG c.c.d.d.m.C.getCommunityInf - ==> Parameters: 宝山区(String), 10(Integer), 10(Integer)
+2020-05-05 15:15:36 [http-nio-8083-exec-5] DEBUG c.c.d.d.m.C.getCommunityInf - <==      Total: 10
+2020-05-05 15:17:53 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m53s697ms).
+2020-05-05 15:18:00 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1m53s693ms).
+2020-05-05 15:25:49 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m25s702ms).
+2020-05-05 15:25:56 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=7m25s705ms).
+2020-05-05 16:04:57 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m37s976ms).
+2020-05-05 16:05:04 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=38m37s974ms).
+2020-05-05 16:55:24 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m27s532ms).
+2020-05-05 16:55:31 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=35m27s538ms).
+2020-05-05 17:16:48 [http-nio-8083-exec-8] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==>  Preparing: SELECT count(0) FROM gis_community t WHERE 1 = 1 AND t.区县 = ? 
+2020-05-05 17:16:48 [http-nio-8083-exec-8] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==> Parameters: 宝山区(String)
+2020-05-05 17:16:48 [http-nio-8083-exec-8] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - <==      Total: 1
+2020-05-05 17:16:48 [http-nio-8083-exec-8] DEBUG c.c.d.d.m.C.getCommunityInf - ==>  Preparing: SELECT t.小区经理名称, t.街道名称, t.MINX, t.MINY, t.小区地址, t.所属区县, t.小区名称, t.小区类型, t.OBJECTID, t.总门牌数 FROM gis_community t WHERE 1 = 1 AND t.区县 = ? order by OBJECTID ASC LIMIT ?, ? 
+2020-05-05 17:16:48 [http-nio-8083-exec-8] DEBUG c.c.d.d.m.C.getCommunityInf - ==> Parameters: 宝山区(String), 12(Integer), 12(Integer)
+2020-05-05 17:16:48 [http-nio-8083-exec-8] DEBUG c.c.d.d.m.C.getCommunityInf - <==      Total: 12
+2020-05-05 17:17:40 [http-nio-8083-exec-9] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==>  Preparing: SELECT count(0) FROM gis_community t WHERE 1 = 1 AND t.区县 = ? 
+2020-05-05 17:17:40 [http-nio-8083-exec-9] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==> Parameters: 宝山区(String)
+2020-05-05 17:17:40 [http-nio-8083-exec-9] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - <==      Total: 1
+2020-05-05 17:17:40 [http-nio-8083-exec-9] DEBUG c.c.d.d.m.C.getCommunityInf - ==>  Preparing: SELECT t.小区经理名称, t.街道名称, t.MINX, t.MINY, t.小区地址, t.所属区县, t.小区名称, t.小区类型, t.OBJECTID, t.总门牌数 FROM gis_community t WHERE 1 = 1 AND t.区县 = ? order by OBJECTID ASC LIMIT ?, ? 
+2020-05-05 17:17:40 [http-nio-8083-exec-9] DEBUG c.c.d.d.m.C.getCommunityInf - ==> Parameters: 宝山区(String), 12(Integer), 12(Integer)
+2020-05-05 17:17:40 [http-nio-8083-exec-9] DEBUG c.c.d.d.m.C.getCommunityInf - <==      Total: 12
+2020-05-05 17:17:41 [http-nio-8083-exec-10] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==>  Preparing: SELECT count(0) FROM gis_community t WHERE 1 = 1 AND t.区县 = ? 
+2020-05-05 17:17:41 [http-nio-8083-exec-10] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - ==> Parameters: 宝山区(String)
+2020-05-05 17:17:41 [http-nio-8083-exec-10] DEBUG c.c.d.d.m.C.getCommunityInf_COUNT - <==      Total: 1
+2020-05-05 17:17:41 [http-nio-8083-exec-10] DEBUG c.c.d.d.m.C.getCommunityInf - ==>  Preparing: SELECT t.小区经理名称, t.街道名称, t.MINX, t.MINY, t.小区地址, t.所属区县, t.小区名称, t.小区类型, t.OBJECTID, t.总门牌数 FROM gis_community t WHERE 1 = 1 AND t.区县 = ? order by OBJECTID ASC LIMIT ?, ? 
+2020-05-05 17:17:41 [http-nio-8083-exec-10] DEBUG c.c.d.d.m.C.getCommunityInf - ==> Parameters: 宝山区(String), 12(Integer), 12(Integer)
+2020-05-05 17:17:41 [http-nio-8083-exec-10] DEBUG c.c.d.d.m.C.getCommunityInf - <==      Total: 12
+2020-05-05 17:35:10 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m45s990ms).
+2020-05-05 17:35:18 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=6m45s998ms).
+2020-05-05 18:14:00 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m19s908ms).
+2020-05-05 18:14:07 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=38m19s918ms).
+2020-05-05 18:20:24 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m23s695ms).
+2020-05-05 18:20:31 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=6m23s702ms).
